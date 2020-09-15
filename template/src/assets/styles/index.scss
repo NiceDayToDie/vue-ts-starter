@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+@import "common/_var";
+@import "common/_mixin";
+@import "common/_iview";
+@import "common/_common";
+@import "common/_function";
+
+// 第三方css
+@import "~view-design/dist/styles/iview.css";

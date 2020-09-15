@@ -1,0 +1,11 @@
+# 多页配置-全部
+# PAGE_MODE=all
+# PAGE_JSON=src/pages/index.json
+
+# 多页配置-单个
+# PAGE_MODE=basic
+# PAGE_JSON=src/pages/index.json
+
+# 单页配置
+PAGE_MODE=
+PAGE_JSON=

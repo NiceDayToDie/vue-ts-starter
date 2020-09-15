@@ -1,0 +1,51 @@
+<article class="single-page-wrapper">
+    <i-card class="card" title="通过keep-alive缓存页面">
+        <div class="title">{{title}}</div>
+        <div>
+            <i-button type="primary" @click="toPage('1')">其他页面1</i-button>
+            <i-button type="primary" @click="toPage('2')">其他页面2</i-button>
+        </div>
+    </i-card>
+
+    <i-card class="card" title="请求异常捕获及全局加载中遮罩">
+        <div>
+            <i-button type="primary" @click="onNormalQueryClick">无加载圈</i-button>
+            <i-button type="primary" @click="onFailedQueryClick">请求失败</i-button>
+            <i-button type="primary" @click="onUpdateClick">更新成功</i-button>
+            <i-button type="primary" @click="onErrorClick">接口报错</i-button>
+            <i-button type="primary" @click="onParallelClick">并发请求</i-button>
+        </div>
+    </i-card>
+
+    <i-card class="card" title="组件间通过事件总线通信">
+        <u-component-a></u-component-a>
+        <u-component-b></u-component-b>
+    </i-card>
+
+    <i-card class="card" title="通过vuex-class进行状态管理">
+        <u-component-c></u-component-c>
+        <u-component-d></u-component-d>
+    </i-card>
+
+    <i-card class="card" title="定义model规范数据格式">
+        <i-table class="diy-table" :columns="columns" :data="data"></i-table>
+        <div class="paging">
+            <i-page show-total
+                    show-sizer
+                    show-elevator
+                    :page-size-opts="[10, 20, 50]"
+                    :total="paging.totalCount"
+                    :current.sync="paging.pageIndex"
+                    :page-size="paging.pageSize"
+                    @on-page-size-change="onPageSizeChange"
+                    @on-change="getTableData">
+            </i-page>
+        </div>
+    </i-card>
+
+    <i-card class="card" title="局部注册自定义指令v-focus">
+        <input v-focus>
+    </i-card>
+
+    <span v-pin:right="20" v-pin:bottom="20">全局注册自定义指令v-pin</span>
+</article>

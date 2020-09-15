@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.header-wrapper {
+    color: white;
+    font-weight: bold;
+    font-size: 0.3rem;
+    text-align: center;
+    background-color: black;
+    @include size(100%, 0.5rem);
+}

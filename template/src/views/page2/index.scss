@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.page-wrapper{
+    @include size;
+
+    .title {
+        color: #FF8C00;
+        font-size: 0.5rem;
+    }
+}

@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+.single-page-wrapper {
+    @include size;
+    background-color: #eaeaea;
+    @include flex(column, flex-start, center);
+
+    .card {
+        width: 10rem;
+        margin-bottom: 16px;
+
+        &:first-of-type {
+            margin-top: 16px;
+        }
+
+        .ivu-card-body {
+            width: 100%;
+            @include flex(column, flex-start, center);
+
+            .title {
+                color: #FF8C00;
+                font-size: 0.5rem;
+            }
+
+            .ivu-btn {
+                margin: 0 10px;
+            }
+        }
+    }
+
+    .diy-table {
+        @include size(100%, 5rem);
+
+        .ivu-table {
+            @include flex(column, flex-start, flex-start);
+
+            .ivu-table-tip {
+                flex: 1;
+                overflow-x: hidden;
+                @include flex(row, center, center);
+
+                table td {
+                    border: 0;
+                }
+            }
+
+            .ivu-table-body {
+                flex: 1;
+                overflow-y: scroll;
+            }
+        }
+    }
+
+    .paging {
+        width: 100%;
+        margin-top: 16px;
+        @include flex(row, flex-end, center);
+    }
+}

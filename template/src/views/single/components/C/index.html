@@ -1,0 +1,18 @@
+<div class="u-component-c">
+    <div class="title">{{title}}</div>
+
+    <div class="row">
+        <p>标准值</p>
+        <i-input-number :max="100" :min="1" v-model="std" :precision="0" @on-change="setStd"></i-input-number>
+    </div>
+
+    <div class="row">
+        <p>大于标准值：</p>
+        <span>{{biggerList}}</span>
+    </div>
+
+    <div class="row">
+        <p>小于标准值：</p>
+        <span>{{smallerList}}</span>
+    </div>
+</div>

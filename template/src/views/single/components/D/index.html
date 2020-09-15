@@ -1,0 +1,14 @@
+<div class="u-component-d">
+    <div class="title">{{title}}</div>
+
+    <div class="row">
+        <p>标准值：</p>
+        <span>{{standard}}</span>
+    </div>
+
+    <div class="row">
+        <p>添加值：</p>
+        <i-input-number :max="100" :min="1" v-model="item" :precision="0"></i-input-number>
+        <i-button @click="addItem(item)">添加</i-button>
+    </div>
+</div>

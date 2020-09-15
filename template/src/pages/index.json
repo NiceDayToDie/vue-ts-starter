@@ -1,0 +1,26 @@
+{
+    "index": {
+        "name": "index",
+        "entry": "src/pages/index/main.ts",
+        "template": "public/index.html",
+        "filename": "index.html",
+        "title": "导航",
+        "chunks": ["chunk-vendors", "chunk-common", "index"]
+    },
+    "basic": {
+        "name": "basic",
+        "entry": "src/pages/basic/main.ts",
+        "template": "public/index.html",
+        "filename": "basic.html",
+        "title": "基本模块",
+        "chunks": ["chunk-vendors", "chunk-common", "basic"]
+    },
+    "extra": {
+        "name": "workflow",
+        "entry": "src/pages/extra/main.ts",
+        "template": "public/index.html",
+        "filename": "extra.html",
+        "title": "额外模块",
+        "chunks": ["chunk-vendors", "chunk-common", "extra"]
+    }
+}

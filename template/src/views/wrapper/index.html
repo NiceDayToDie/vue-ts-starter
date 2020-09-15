@@ -1,0 +1,11 @@
+<article class="v-container">
+    <g-header></g-header>
+
+    <section class="v-page">
+        <transition name="fade" mode="out-in">
+            <keep-alive :include="cachePageList">
+                <router-view></router-view>
+            </keep-alive>
+        </transition>
+    </section>
+</article>

@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.index-wrapper{
+    @include size;
+    @include flex(row, center, center);
+
+    a {
+        margin: 0 20px;
+        font-size: 0.2rem;
+    }
+}

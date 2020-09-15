@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+.u-component-a {
+    margin-bottom: 10px;
+    @include size(100%, 1rem);
+    @include flex(row, center, center);
+    @include border(1px, solid, #000000);
+}

@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.v-container{
+    @include size;
+    position: relative;
+    @include flex(column, flex-start, flex-start);
+
+    .v-page {
+        flex: 1;
+        width: 100%;
+    }
+}

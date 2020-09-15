@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+.u-component-b {
+    @include size(100%, 1rem);
+    @include border(1px, solid, #000000);
+    @include flex(column, space-around, center);
+}
