@@ -1,8 +1,9 @@
 import Vue from "vue";
+import _ from "lodash";
 
 declare module "vue/types/vue" {
     interface Vue {
         $bus: any;
-        _: any;
+        _: _.LoDashStatic;
     }
 }
