@@ -11,6 +11,7 @@ import "@/mock";
 import "@/assets/styles/index.scss";
 import EventBus from "@/mixins/event-bus";
 import { directives } from "@/directives";
+import { moneyFormat } from "@/utils/format";
 
 import Header from "@/components/header";
 
@@ -20,6 +21,7 @@ export default class Application {
     public start(routes: Array<any>, modules: any) {
 
         Application.initConfig();
+        Application.initFilter();
         Application.initMixin();
         Application.initComponent();
         Application.initDirective();
@@ -43,6 +45,11 @@ export default class Application {
         Vue.prototype.$bus = new Vue();
         // lodash工具库
         Vue.prototype._ = _;
+    }
+
+    // 初始化全局过滤器
+    private static initFilter() {
+        Vue.filter("moneyFormat", moneyFormat);
     }
 
     // 初始化全局混入
