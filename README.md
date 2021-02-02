@@ -38,3 +38,16 @@ vue create --preset NiceDayToDie/vue-ts-starter my-project
 
 /generator/template/_variable.scss
 ```
+
+
+
+## 更新说明
+
+### v1.0.1
+
++ 添加lodash库类型判断
++ 新增全局过滤器配置
++ 通过媒体查询自适应移动端设备
++ 根据条件动态引入mock库
++ 更新启动类结构
++ 更新部分依赖版本解决潜在安全缺陷
