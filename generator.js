@@ -3,11 +3,11 @@ module.exports = (api, opts) => {
         "scripts": {
             "serve": "vue-cli-service serve",
             "build": "vue-cli-service build",
-            "dist": "http-server ./dist -o",
-            "lint": "vue-cli-service lint"
+            "lint": "vue-cli-service lint",
+            "dist": "serve ./dist"
         },
         "dependencies": {
-            "axios": "^0.19.2",
+            "axios": "^0.21.1",
             "core-js": "^3.6.5",
             "js-cookie": "^2.2.1",
             "lodash": "^4.17.20",
@@ -23,17 +23,17 @@ module.exports = (api, opts) => {
             "@types/js-cookie": "^2.2.6",
             "@types/lodash": "^4.14.161",
             "@types/mockjs": "^1.0.2",
-            "@vue/cli-plugin-babel": "~4.4.0",
-            "@vue/cli-plugin-router": "~4.4.0",
-            "@vue/cli-plugin-typescript": "~4.4.0",
-            "@vue/cli-plugin-vuex": "~4.4.0",
-            "@vue/cli-service": "~4.4.0",
-            "http-server": "^0.12.3",
+            "@vue/cli-plugin-babel": "~4.5.11",
+            "@vue/cli-plugin-router": "~4.5.11",
+            "@vue/cli-plugin-typescript": "~4.5.11",
+            "@vue/cli-plugin-vuex": "~4.5.11",
+            "@vue/cli-service": "~4.5.11",
             "iview-loader": "^1.3.0",
             "mockjs": "^1.1.0",
             "node-sass": "^4.12.0",
             "raw-loader": "^4.0.1",
             "sass-loader": "^8.0.2",
+            "serve": "^11.3.2",
             "typescript": "~3.9.3",
             "vue-template-compiler": "^2.6.11"
         }
