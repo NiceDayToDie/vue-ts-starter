@@ -6,8 +6,8 @@ import Cookies from "js-cookie";
 import iView from "view-design";
 import VueRouter from "vue-router";
 import Component from "vue-class-component";
+import { commonSetting } from "@/settings";
 
-import "@/mock";
 import "@/assets/styles/index.scss";
 import EventBus from "@/mixins/event-bus";
 import { directives } from "@/directives";
@@ -18,7 +18,8 @@ import Header from "@/components/header";
 export default class Application {
     public static instance: any;
 
-    public start(routes: Array<any>, modules: any) {
+    public async start(routes: Array<any>, modules: any) {
+        if (commonSetting.mock) await import("@/mock");
 
         Application.initConfig();
         Application.initFilter();
