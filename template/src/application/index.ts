@@ -1,6 +1,6 @@
 import Vue from "vue";
 import _ from "lodash";
-import Vuex from "vuex";
+import Vuex, { Store } from "vuex";
 import axios from "axios";
 import Cookies from "js-cookie";
 import iView from "view-design";
@@ -16,31 +16,34 @@ import { moneyFormat } from "@/utils/format";
 import Header from "@/components/header";
 
 export default class Application {
+    public store!: Store<any>;
+    public router!: VueRouter;
+
     public static instance: any;
 
     public async start(routes: Array<any>, modules: any) {
         if (commonSetting.mock) await import("@/mock");
 
-        Application.initConfig();
-        Application.initFilter();
-        Application.initMixin();
-        Application.initComponent();
-        Application.initDirective();
-        Application.initAxios();
+        this.store = this.initVuex(modules);
+        this.router = this.initRouter(routes);
 
-        const store = Application.initVuex(modules);
-        const router = Application.initRouter(routes);
+        this.initConfig();
+        this.initFilter();
+        this.initMixin();
+        this.initComponent();
+        this.initDirective();
+        this.initAxios();
 
         Application.instance = new Vue({
             el: "#app",
-            store,
-            router,
+            store: this.store,
+            router: this.router,
             template: "<div id='app'><router-view/></div>"
         });
     }
 
     // 初始化vue配置项
-    private static initConfig() {
+    public initConfig() {
         Vue.config.productionTip = false;
         // 事件总线
         Vue.prototype.$bus = new Vue();
@@ -49,28 +52,28 @@ export default class Application {
     }
 
     // 初始化全局过滤器
-    private static initFilter() {
+    public initFilter() {
         Vue.filter("moneyFormat", moneyFormat);
     }
 
     // 初始化全局混入
-    private static initMixin() {
+    public initMixin() {
         Vue.mixin(EventBus);
     }
 
     // 初始化全局组件
-    private static initComponent() {
+    public initComponent() {
         Vue.use(iView);
         Vue.component("g-header", Header);
     }
 
     // 初始化全局自定义指令
-    private static initDirective() {
+    public initDirective() {
         Vue.use(directives);
     }
 
     // 初始化Axios拦截器
-    private static initAxios() {
+    public initAxios() {
         // 请求拦截
         axios.interceptors.request.use(
             config => {
@@ -81,6 +84,11 @@ export default class Application {
                 return config;
             },
             e => {
+                if (e.response.status === 401) {
+                    Cookies.remove("access_token");
+                    Vue.prototype.$Message.error("用户鉴权失败，请重新登录");
+                    this.router.push("/");
+                }
                 console.error(e);
                 return Promise.reject(e);
             }
@@ -99,7 +107,7 @@ export default class Application {
     }
 
     // 初始化vue-router
-    private static initRouter(routes: Array<any>) {
+    public initRouter(routes: Array<any>) {
         Component.registerHooks([
             "beforeRouteEnter",
             "beforeRouteLeave",
@@ -116,7 +124,7 @@ export default class Application {
     }
 
     // 初始化vuex
-    private static initVuex(modules: any) {
+    public initVuex(modules: any) {
         Vue.use(Vuex);
         return new Vuex.Store({modules});
     }
