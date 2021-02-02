@@ -22,3 +22,8 @@ $font-color-g: darken($color-white-g, 5%);
 $font-color-white-g: $color-white-g;
 $font-color-gray-g: darken($color-gray-g, 10%);
 $font-color-blue-g: #4ABDF4;
+
+/* --------------------------------------------
+4、多设备媒体查询断点
+---------------------------------------------*/
+$MQMobile: 769px;
