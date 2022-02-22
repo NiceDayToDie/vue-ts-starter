@@ -65,7 +65,7 @@ export default class Single extends Vue {
     }
 
     public activated() {
-        if (this.$route.meta.needRefresh) {
+        if (this.$route.meta?.needRefresh) {
             this.refresh();
             this.$route.meta.needRefresh = false;
         }
