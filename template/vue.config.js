@@ -55,7 +55,7 @@ module.exports = {
         loaderOptions: {
             sass: {
                 //设置css中引用文件的路径，引入通用使用的scss文件（如包含的@mixin）
-                prependData: `
+                additionalData: `
 				$baseUrl: "/";
                 @import "~@/assets/styles/common/_var.scss";
                 @import "~@/assets/styles/common/_mixin.scss";

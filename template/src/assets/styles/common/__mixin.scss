@@ -99,3 +99,12 @@ flex布局
 @mixin border($width: 1px, $style: solid, $color: $font-color-white-g) {
     border: $width $style $color;
 }
+
+/* --------------------------------------------
+手机
+---------------------------------------------*/
+@mixin mobile {
+    @media (max-width: $MQMobile) {
+        @content;
+    }
+}

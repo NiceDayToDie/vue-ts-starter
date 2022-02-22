@@ -7,10 +7,10 @@ module.exports = (api, opts) => {
             "dist": "serve ./dist"
         },
         "dependencies": {
-            "axios": "^0.21.1",
+            "axios": "^0.21.2",
             "core-js": "^3.6.5",
             "js-cookie": "^2.2.1",
-            "lodash": "^4.17.20",
+            "lodash": "^4.17.21",
             "view-design": "^4.3.2",
             "vue": "^2.6.11",
             "vue-class-component": "^7.2.3",
@@ -30,9 +30,9 @@ module.exports = (api, opts) => {
             "@vue/cli-service": "~4.5.11",
             "iview-loader": "^1.3.0",
             "mockjs": "^1.1.0",
-            "node-sass": "^4.12.0",
             "raw-loader": "^4.0.1",
-            "sass-loader": "^8.0.2",
+            "sass": "^1.49.8",
+            "sass-loader": "^10.2.1",
             "serve": "^11.3.2",
             "typescript": "~3.9.3",
             "vue-template-compiler": "^2.6.11"
