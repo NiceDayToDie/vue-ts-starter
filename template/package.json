@@ -9,7 +9,7 @@
         "dist": "serve ./dist"
     },
     "dependencies": {
-        "axios": "^0.21.1",
+        "axios": "^0.21.2",
         "core-js": "^3.6.5",
         "js-cookie": "^2.2.1",
         "lodash": "^4.17.21",
