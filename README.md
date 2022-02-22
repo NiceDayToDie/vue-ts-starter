@@ -43,6 +43,10 @@ vue create --preset NiceDayToDie/vue-ts-starter my-project
 
 ## 更新说明
 
+### v1.0.2
+
++ 用dart-sass替换node-sass，适配node v16环境
+
 ### v1.0.1
 
 + 添加lodash库类型判断
